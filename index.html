@@ -1,0 +1,903 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+
+    <title>Arthur Poulet</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="font-awesome.min.css" rel="stylesheet"> -->
+    <!-- <link href="http://fonts.googleapis.com/css?family=Oxygen:700,400,300" rel="stylesheet" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:700,400,300" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" media="screen" href="bootstrap.min.css">
+    <style media="screen">
+      body {
+      font: 15px Oxygen, Arial, Helvetica, sans-serif;
+      background-color: #F0EDED;
+      }
+
+      section {
+      margin-bottom: 2em;
+      }
+
+      img {
+      border-radius: 100px;
+      }
+
+      a {
+      text-decoration: none;
+      color: #000;
+      }
+
+      a:hover {
+      text-transform: underline;
+      color: #000;
+      }
+
+      .bold {
+      font-size: 1.1em;
+      font-weight: bold;
+      }
+
+      #resume {
+      background-color: #FFF;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 5%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      box-shadow: 0px 0px 10px #000;
+      -webkit-box-shadow: 0px 0px 10px #000;
+      -moz-box-shadow: 0px 0px 10px #000;
+      }
+
+      #header {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      box-shadow: 3px 3px 3px 3px black;
+      width: 100%;
+      left: 0;
+      }
+
+      #header a {
+      color: #fff;
+      }
+
+      #header ul li {
+      list-style-type: none;
+      display: inline-block;
+      margin-left: 0;
+      }
+
+      .contact {
+      margin-top: 2%;
+      margin-left: -5%;
+      }
+
+      .location {
+      margin-top: 2%;
+      font-size: 0.8em;
+      }
+      #basics .summary {
+      text-align: center;
+      }
+
+      .media {
+      margin-top: 2%;
+      }
+
+      .media-item {
+      display: inline-block;
+      }
+
+      #work, #volunteer, #education, #awards, #publications, #skills, #languages, #interests {
+      border-bottom: 1px dotted #eee;
+      }
+
+      #work .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #0099CC;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #volunteer .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #D4A017;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #education .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #438D80;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #awards .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #954535;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #publications .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #B2C248;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #skills .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #CC6600;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #languages .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #306754;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #interests .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #6F4E37;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #references .section-info {
+      font-size: 1.2em;
+      color: #FFF;
+      background-color: #85BB65;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 3em;
+      }
+
+      #work .work-item, #volunteer .volunteer-item , #education .education-item, #awards .award-item,
+      #publications .pub-item, #languages .lang-item, #interests .interest-item, #references .ref-item  {
+      padding-left: 2%;
+      padding-bottom: 2%;
+      padding-top: 0.2em;
+      }
+
+      #work .work-item:hover , #volunteer .volunteer-item:hover, #education .education-item:hover, #awards .award-item:hover,
+      #publications .pub-item:hover, #languages .lang-item:hover, #interests .interest-item:hover, #references .ref-item:hover{
+      background-color: #EEE;
+      }
+
+      #work .work-position, #volunteer .volunteer-position , #education .education-institution, #awards .award-title,
+      #publications .pub-name, #languages .lang-name, #interests .interest-name {
+      text-transform: uppercase;
+      font-size: 1.2em;
+      font-weight: bold;
+      }
+
+      #work .work-position, #work .duration {
+      color: #0099CC
+      }
+
+      #volunteer .volunteer-position, #volunteer .duration {
+      color: #D4A017;
+      }
+
+      #education .education-institution, #education .duration  {
+      color: #438D80;
+      }
+
+      #awards .award-title, #awards .award-date {
+      color: #954535;
+      }
+
+      #publications .pub-name, #publications .pub-date {
+      color: #B2C248;
+      }
+
+      #languages .lang-name {
+      color: #306754;
+      }
+
+      #interests .interest-name {
+      color: #6F4E37;
+      }
+
+      #references .ref-text {
+      word-wrap: break-word;
+      }
+
+      #references .ref-by {
+      text-align: right;
+      }
+
+      #work .duration, #volunteer .duration, #education .duration, #awards .award-date ,
+      #publications .pub-date, #languages .lang-fluency, #interests .interest-keyword {
+      font-size: 1em;
+      text-align: center;
+      }
+
+      #skills .skills-header th {
+      font-size: 1.2em;
+      width: 33%;
+      }
+
+      #skills .skills-rows  td{
+      width: 33%;
+      }
+
+      #skills .skills-rows td:first-child {
+      color: #CC6600;
+      }
+
+      .name {
+      text-transform: uppercase;
+      border-bottom: 1px solid white;
+      }
+      .item {
+      margin-bottom: 1em;
+      }
+
+      .small-header {
+      display: none;
+      }
+
+      /* media queries */
+      @media all and (max-width: 768px) {
+      #work .section-info, #volunteer .section-info, #education .section-info,
+      #awards .section-info, #publications .section-info, #skills .section-info,
+      #languages .section-info, #interests .section-info, #references .section-info  {
+      font-size: 1.1em;
+      right: 0;
+      left: 0;
+      }
+      .small-header {
+      display: block;
+      }
+
+      .big-header {
+      display: none;
+      }
+
+      #work, #volunteer, #education, #awards, #publications, #languages, #skills, #interests, #references {
+      font-size: 0.7em;
+      }
+
+      .name {
+      font-size: 2em;
+      }
+
+      .media {
+      font-size: 0.8em;
+      }
+
+      #header .contact ul li{
+      display: block;
+      margin-right: 10%;
+      }
+      }
+
+      @media all and (min-width: 769px) and (max-width: 1093px) {
+      #work .section-info, #volunteer .section-info, #education .section-info,
+      #awards .section-info, #publications .section-info, #skills .section-info,
+      #languages .section-info, #interests .section-info, #references .section-info  {
+      font-size: 0.9em;
+      }
+      }
+    </style>
+
+    <style media="print">
+      body {
+      font: 15px Oxygen, Arial, Helvetica, sans-serif;
+      }
+
+      section {
+      margin-bottom: 2em;
+      }
+
+      img {
+      border-radius: 100px;
+      }
+
+      a {
+      text-decoration: none;
+      color: #000;
+      }
+
+      a:hover {
+      text-transform: underline;
+      color: #000;
+      }
+
+      .bold {
+      font-size: 1.1em;
+      font-weight: bold;
+      }
+
+      #header {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      box-shadow: 3px 3px 3px 3px black;
+      width: 100%;
+      left: 0;
+      }
+
+      #header a {
+      color: #fff;
+      }
+
+      #header ul li {
+      list-style-type: none;
+      display: inline-block;
+      margin-left: 0;
+      }
+
+      .contact {
+      margin-top: 2%;
+      margin-left: -5%;
+      }
+
+      .location {
+      margin-top: 2%;
+      font-size: 0.8em;
+      }
+      #basics .summary {
+      text-align: center;
+      }
+
+      .media {
+      margin-top: 2%;
+      }
+
+      .media-item {
+      display: inline-block;
+      }
+
+      #work, #volunteer, #education, #awards, #publications, #skills, #languages, #interests {
+      border-bottom: 1px dotted #eee;
+      }
+
+      #work .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #0099CC;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #volunteer .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #D4A017;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #education .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #438D80;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #awards .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #954535;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #publications .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #B2C248;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #skills .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #CC6600;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #languages .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #306754;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #interests .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #6F4E37;
+      border-radius: 0;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #references .section-info {
+      font-size: 2em;
+      color: #FFF;
+      background-color: #85BB65;
+      border-radius: 0;
+      left: 1%;
+      right: 1%;
+      text-align: center;
+      line-height: 1em;
+      }
+
+      #work .work-item, #volunteer .volunteer-item , #education .education-item, #awards .award-item,
+      #publications .pub-item, #languages .lang-item, #interests .interest-item, #references .ref-item  {
+      padding-left: 2%;
+      padding-bottom: 2%;
+      padding-top: 0.2em;
+      }
+
+      #work .work-item:hover , #volunteer .volunteer-item:hover, #education .education-item:hover, #awards .award-item:hover,
+      #publications .pub-item:hover, #languages .lang-item:hover, #interests .interest-item:hover, #references .ref-item:hover{
+      background-color: #EEE;
+      }
+
+      #work .work-position, #volunteer .volunteer-position , #education .education-institution, #awards .award-title,
+      #publications .pub-name, #languages .lang-name, #interests .interest-name {
+      text-transform: uppercase;
+      font-size: 1.2em;
+      font-weight: bold;
+      }
+
+      #work .work-position, #work .duration {
+      color: #0099CC
+      }
+
+      #volunteer .volunteer-position, #volunteer .duration {
+      color: #D4A017;
+      }
+
+      #education .education-institution, #education .duration  {
+      color: #438D80;
+      }
+
+      #awards .award-title, #awards .award-date {
+      color: #954535;
+      }
+
+      #publications .pub-name, #publications .pub-date {
+      color: #B2C248;
+      }
+
+      #languages .lang-name {
+      color: #306754;
+      }
+
+      #interests .interest-name {
+      color: #6F4E37;
+      }
+
+      #references .ref-text {
+      word-wrap: break-word;
+      }
+
+      #references .ref-by {
+      text-align: right;
+      }
+
+      #work .duration, #volunteer .duration, #education .duration, #awards .award-date ,
+      #publications .pub-date, #languages .lang-fluency, #interests .interest-keyword {
+      font-size: 1em;
+      text-align: center;
+      }
+
+      #skills .skills-header th {
+      font-size: 1.2em;
+      width: 33%;
+      }
+
+      #skills .skills-rows  td{
+      width: 33%;
+      }
+
+      #skills .skills-rows td:first-child {
+      color: #CC6600;
+      }
+
+      .name {
+      text-transform: uppercase;
+      border-bottom: 1px solid white;
+      }
+      .item {
+      margin-bottom: 1em;
+      }
+
+      .small-header {
+      display: block;
+      }
+
+      .big-header {
+      display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="resume" class="container-fluid">
+
+      <section id="header">
+	<div class="row">
+	  <img src="profile.jpg"></img>
+	</div>
+	<div class="row">
+	  <h1 class="name col-sm-12">Arthur Poulet</h1>
+	  <h4 class="designation col-sm-12">Developer Ruby and Linux admin</h4>
+	</div>
+	<div class="row media">
+	  <div id="profiles">
+	    <div class="media-item">
+	      <a href="https://twitter.com/poulet_a">Twitter</a>
+	      ||
+	    </div>
+	    <div class="media-item">
+	      <a href="http://github.com/pouleta/">Github</a>
+	      ||
+	    </div>
+	    <div class="media-item">
+	      <a href="http://gitlab.com/u/poulet_a/">Gitlab</a>
+	    </div>
+	  </div>
+	  <div class="row contact">
+	    <ul>
+	      <li class="col-sm-4">
+		<span class="fa fa-globe fa-2x"></span> <a href="http://github.com/pouleta">http://github.com/pouleta</a>
+	      </li>
+	      <li class="col-sm-4">
+		<span class="fa fa-envelope fa-2x"></span>  <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b4d5c6c0dcc1c69ac4dbc1d8d1c0f4d7c6cdc4c0dbd8d5d69adad1c0">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">
+		  /* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script>
+	      </li>
+	      <li class="col-sm-4">
+		<span class="fa fa-phone fa-2x"></span>  +336 08 68 43 87
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="row location">
+	    <div class="col-sm-12">
+	      <span class="fa fa-map-marker fa-2x"></span>
+	      <span>
+		5 allée des aulnes
+		77 360
+		Vaires Sur Marne
+		France
+		Île de France
+	      </span>
+	    </div>
+	  </div>
+      </section>
+
+      <section id="basics">
+	<div class="row summary">
+	  <span class="fa fa-quote-left fa-2x"></span>
+	  <span>I&#x27;m Arthur Poulet. After a scientific baccalaureate, I became a student at Epitech (Paris, France). I work for Je Rêve d&#x27;une Maison, a startup with a technologic stack based on Ruby, Javascript, and Postgresql. I&#x27;m a Ruby On Rails enthusiast, and I code for myself, like the passionate I am. I can look slightly brutal when I speak about things I don&#x27;t like (Microsoft, Monsanto maybe), but I&#x27;m not limited in my mind, and I want to learn. I&#x27;m sensitive about free (Libre), especially in computer sciences. I&#x27;m very interested about deep learning, statistics, and bio-informatics, even without a professional practice.</span>
+	  <span class="fa fa-quote-right fa-2x"></span>
+	</div>
+      </section>
+
+      <section id="work" class="row">
+	<div class="col-sm-3 section-info">
+	  W o r k
+	</div>
+	<div class="col-sm-9">
+	  <div class="col-sm-12 work-item">
+	    <p class="col-sm-7">
+	      <span class="work-position">Developer</span>,
+	      <a href="http://www.jerevedunemaison.com/">Je Rêve D&#x27;une Maison</a>
+	    </p>
+	    <div class="col-sm-12 work-summary">
+	      <p>
+		JRDM is a platform to search properties
+	      </p>
+	    </div>
+	    <div class="col-sm-12 work-highlights">
+	      <ul>
+		<li>Building intern API between the Back-Office and multiple services (like Cartodb, Algolia, ...).</li>
+		<li>Scraping of several (&gt; 70) differents websites. Building of the scrapers scripts, web infrastructure, concurrences, etc.</li>
+		<li>Formation and support the new interns (teaching about the tools, environment, etc.).</li>
+	      </ul>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+
+      <section id="education" class="row">
+	<div class="col-sm-3 section-info">
+	  E d u c a t i o n
+	</div>
+	<div class="col-sm-9">
+	  <div class="col-sm-12 education-item">
+	    <p class="col-sm-7">
+	      <span class="education-institution fa fa-university">Academie de Creteil-Paris-Versaille</span>
+	    </p>
+	    <p class="col-sm-5 duration">
+	      <span class="fa fa-clock-o"></span>
+	      2010-09-01 -- 2013-07-01
+	    </p>
+	    <div class="col-sm-12 education-subject">
+	      <p>
+		<span class="bold">Area :</span> General Baccalaureate
+		| <span class="bold">Level :</span> Scientific Baccalaureate
+		| <span class="bold">GPA :</span> 13/20
+	      </p>
+	    </div>
+	    <div class="col-sm-12 education-courses">
+	      <ul>
+		<li>Mathematics</li>
+		<li>Biology</li>
+		<li>Chemistry</li>
+		<li>Physics</li>
+	      </ul>
+	    </div>
+	  </div>
+	  <div class="col-sm-12 education-item">
+	    <p class="col-sm-7">
+	      <span class="education-institution fa fa-university">Epitech</span>
+	    </p>
+	    <p class="col-sm-5 duration">
+	      <span class="fa fa-clock-o"></span>
+	      2013-08-01 -- 2016-08-01
+	    </p>
+	    <div class="col-sm-12 education-subject">
+	      <p>
+		<span class="bold">Area :</span> Information Technology
+		| <span class="bold">Level :</span> Bachelor
+		| <span class="bold">GPA :</span> 3.60
+	      </p>
+	    </div>
+	    <div class="col-sm-12 education-courses">
+	      <ul>
+		<li>UNIX programming (C)</li>
+		<li>POO architecture (C++)</li>
+		<li>Database and networks (CISCO, MariaDB)</li>
+		<li>Advanced programming: Graph theory, Deep Learning</li>
+		<li>Communication, Marketing</li>
+	      </ul>
+	    </div>
+	  </div>
+	  <div class="col-sm-12 education-item">
+	    <p class="col-sm-7">
+	      <span class="education-institution fa fa-university">Epitech</span>
+	    </p>
+	    <p class="col-sm-5 duration">
+	      <span class="fa fa-clock-o"></span>
+	      2016-08-02 -- 2018-08-01
+	    </p>
+	    <div class="col-sm-12 education-subject">
+	      <p>
+		<span class="bold">Area :</span> Information Technology
+		| <span class="bold">Level :</span> Master
+	      </p>
+	    </div>
+	  </div>
+	</div>
+      </section>
+
+      <section id="awards" class="row">
+	<div class="col-sm-3 section-info small-header">
+	  A w a r d s
+	</div>
+	<div class="col-sm-9">
+	  <div class="col-sm-12 award-item">
+	    <p class="col-sm-7">
+	      <span class="award-title">Mathematics valedictorian</span>
+	      by
+	      Epitech
+	    </p>
+	    <p class="col-sm-5 award-date">
+	      <span class="fa fa-clock-o"></span>
+	      2014-07-01
+	    </p>
+	    <div class="col-sm-12 award-summary">
+	      Great implication in the mathematics module
+	    </div>
+	  </div>
+	  <div class="col-sm-12 award-item">
+	    <p class="col-sm-7">
+	      <span class="award-title">Mathematics valedictorian</span>
+	      by
+	      Epitech
+	    </p>
+	    <p class="col-sm-5 award-date">
+	      <span class="fa fa-clock-o"></span>
+	      2015-07-01
+	    </p>
+	    <div class="col-sm-12 award-summary">
+	      Great implication in the mathematics module
+	    </div>
+	  </div>
+	</div>
+	<div class="col-sm-3 section-info big-header">
+	  A w a r d s
+	</div>
+      </section>
+
+
+      <section id="skills" class="row">
+	<div class="col-sm-3 section-info small-header">
+	  S k i l l s
+	</div>
+	<div class="col-sm-9">
+	  <table class="table table-hover">
+	    <tr class="skills-header">
+	      <th>Skill</th>
+	      <th>Level</th>
+	      <th>Specifics</th>
+	    </tr>
+	    <tr class="skills-rows">
+	      <td class="bold">Web Development</td>
+	      <td>Intermediate</td>
+	      <td>
+		HTML,
+		CSS,
+		Javascript,
+		Ruby &amp; Ruby On Rails
+	      </td>
+	    </tr>
+	    <tr class="skills-rows">
+	      <td class="bold">UNIX System programming</td>
+	      <td>Intermediate</td>
+	      <td>
+		C,
+		Socket,
+		Thread,
+		UNIX
+	      </td>
+	    </tr>
+	    <tr class="skills-rows">
+	      <td class="bold">POO Programming and Architecture</td>
+	      <td>Intermediate</td>
+	      <td>
+		C++,
+		Ruby,
+		UML
+	      </td>
+	    </tr>
+	    <tr class="skills-rows">
+	      <td class="bold">System Administration</td>
+	      <td>Intermediate</td>
+	      <td>
+		Network management (CISCO),
+		UNIX administration (GNU/Linux),
+		HTTP Server (NGINX),
+		SQL Database (Postgresql)
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+	<div class="col-sm-3 section-info big-header">
+	  S k i l l s
+	</div>
+      </section>
+
+      <section id="languages" class="row">
+	<div class="col-sm-3 section-info">
+	  L a n g u a g e s
+	</div>
+	<div class="col-sm-9">
+	  <div class="col-sm-12 lang-item">
+	    <span class="lang-name fa fa-language"> French</span>
+	    <span class="lang-fluency fa fa-ellipsis-h">   Native speaker</span>
+	  </div>
+	  <div class="col-sm-12 lang-item">
+	    <span class="lang-name fa fa-language"> English</span>
+	    <span class="lang-fluency fa fa-ellipsis-h">   Professional (TOEIC 750)</span>
+	  </div>
+	</div>
+      </section>
+
+      <section id="interests" class="row">
+	<div class="col-sm-3 section-info small-header">
+	  I n t e r e s t s
+	</div>
+	<div class="col-sm-9">
+	  <div class="interest-item">
+            <span class="interest-name">Open Source initiatives</span>
+	    <span class="interest-keyword">
+	      GNU Initiative,
+	    </span>
+	    <span class="interest-keyword">
+	      Mozilla &amp; Rust Programming,
+	    </span>
+	    <span class="interest-keyword">
+	      CozyCloud,
+	    </span>
+	    <span class="interest-keyword">
+	      Open Data
+	    </span>
+	  </div>
+	  <div class="interest-item">
+            <span class="interest-name">Networks and security</span>
+	    <span class="interest-keyword">
+	      Firewalls,
+	    </span>
+	    <span class="interest-keyword">
+	      Computer Viruses,
+	    </span>
+	    <span class="interest-keyword">
+	      Secure System Administration,
+	    </span>
+	    <span class="interest-keyword">
+	      GPG Security
+	    </span>
+	  </div>
+	</div>
+	<div class="col-sm-3 section-info big-header">
+	  I n t e r e s t s
+	</div>
+      </section>
+
+
+      </div>
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+      <script src="jquery.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<p><meta charset="utf-8" /></p><h1 id="installer-ruby"><a name="installer-ruby" href="#installer-ruby" class="md2man-permalink" title="permalink"></a><span class="md2man-title">Installer</span> <span class="md2man-section">Ruby</span></h1><p><strong>Installation d&#39;un environnement de développement Ruby propre</strong></p><h2 id="installations"><a name="installations" href="#installations" class="md2man-permalink" title="permalink"></a>Installations</h2><h3 id="rbenv"><a name="rbenv" href="#rbenv" class="md2man-permalink" title="permalink"></a>Rbenv</h3><p>Rbenv permet de gérer son environnement de développement très simplement : version de ruby, gems, etc.</p>
+<ul>
+<li>L&#39;installation peut se faire via son répo git : <a href="https://github.com/sstephenson/rbenv">rbenv sur github</a></li>
+<li>Ou alors via un gestionnaire de paquet (apt-get install rbenv, …)</li>
+</ul>
+<h3 id="ruby-build"><a name="ruby-build" href="#ruby-build" class="md2man-permalink" title="permalink"></a>Ruby-build</h3><p>Extension de rbenv, elle permet l&#39;installation des versions de ruby (téléchargement, compilation, ...)</p>
+<ul>
+<li>L&#39;installation peut se faire via son répo git : <a href="https://github.com/sstephenson/ruby-build">ruby-build sur github</a></li>
+<li>Ou alors via un gestionnaire de paquet (apt-get install ruby-build, …)</li>
+</ul>
+<h3 id="mise-jour-du-path"><a name="mise-jour-du-path" href="#mise-jour-du-path" class="md2man-permalink" title="permalink"></a>Mise à jour du $PATH</h3><p>Il faut ensuite mettre à jour son bashrc / zshrc / config</p><h4 id="bash-zsh"><a name="bash-zsh" href="#bash-zsh" class="md2man-permalink" title="permalink"></a>Bash, Zsh, …</h4><pre><code>export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;
+export PATH=&quot;$HOME/.rbenv/shims:$PATH&quot;
+rbenv rehash &gt;/dev/null
+</code></pre>
+<h4 id="fish"><a name="fish" href="#fish" class="md2man-permalink" title="permalink"></a>Fish</h4><pre><code>set PATH $HOME/.rbenv/bin $PATH
+set PATH $HOME/.rbenv/shims $PATH
+rbenv rehash &gt;/dev/null ^&amp;1
+</code></pre>
